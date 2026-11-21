@@ -91,6 +91,6 @@ Read the mapping as `computer address : computer port : container port`. The two
 
 Combined narrow retest: complete the trace for this example: `docker ____` starts the container; then the browser requests `http://127.0.0.1:____/health`.
 
-Build/run and external/internal port understanding need reinforcement; the combined retest is unanswered. The running package and CI results remain verified separately from learner understanding.
+The learner answered the combined retest: "docker run starts the container, with mapping 9000:8000, the browser connects to port 9000." Correct after correction/retest. This passes the narrow build/run and computer/container port check; it does not establish independent Docker troubleshooting proficiency. The running package and CI results remain verified separately from learner understanding.
 
 Sources: [Dockerfile instructions](https://docs.docker.com/build/concepts/dockerfile/), [Docker build practices and digest pinning](https://docs.docker.com/build/building/best-practices/), [GitHub workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax), and [standard public-runner billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions).

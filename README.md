@@ -14,7 +14,9 @@ Day 1 has a [six-lesson teaching roadmap](docs/day01-roadmap.md). [Lesson 3](doc
 
 [Lesson 5A](docs/lessons/05-version-history.md) traces working files, staging, local commits, and pushing to the existing GitHub repository. The published baseline is `b801aa1`; its narrow learner check passed after correction and retest.
 
-[Lesson 5B](docs/lessons/05b-packaging-the-service.md) adds a pinned Docker recipe and automated container checks. A [clean Linux CI run passed](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409): dependency consistency, six tests (four schema/two startup-checker), and real HTTP responses 200/405/404. Raw failed/passing logs, image identity, and hashes are retained in the [packaging report](reports/day01/packaging-2026-11-21/). The local Windows Docker engine remains unavailable, and the service is not publicly deployed. The image/container learner check is pending.
+[Lesson 5B](docs/lessons/05b-packaging-the-service.md) adds a pinned Docker recipe and automated container checks. A [clean Linux CI run passed](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409): dependency consistency, six tests (four schema/two startup-checker), and real HTTP responses 200/405/404. Raw failed/passing logs, image identity, and hashes are retained in the [packaging report](reports/day01/packaging-2026-11-21/). The narrow learner build/run/port check passed after correction/retest. The local Windows Docker engine remains unavailable, and the service is not publicly deployed.
+
+[Lesson 6](docs/lessons/06-public-health-service.md) prepares the public-health deployment. [render.yaml](render.yaml) proposes one free Docker web service with manual deploys and `/health`. YAML/local consistency checks passed; Render account, eligibility/quota/billing review, official validation, and deployment remain pending.
 
 ## Run the current local service
 

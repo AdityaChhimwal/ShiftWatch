@@ -1,0 +1,16 @@
+# Deployment proposal: account, quota, billing, and launch approval are still required.
+services:
+  - type: web
+    name: shiftwatch
+    runtime: docker
+    plan: free
+    region: singapore
+    repo: https://github.com/AdityaChhimwal/ShiftWatch
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeployTrigger: "off"
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "8000"
