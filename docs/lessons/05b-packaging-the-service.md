@@ -73,6 +73,24 @@ The corrected [run 44899459409](https://github.com/AdityaChhimwal/ShiftWatch/act
 
 We successfully run `docker build` and have an image, but have not run a container. Is `/health` now being served by that image, or what still needs to happen?
 
-No answer has been assessed yet. Git's staging/local-history retest is passed separately in Lesson 5A.
+The learner first answered "It still need to send a request." That omits starting the container. Explained that `docker run` starts the container and executes its startup command before a request can receive a response. The subsequent response used `docker build` for both building and starting; clarified again that the startup command is `docker run`. Do not infer a passed build/run distinction from that response. Git's staging/local-history retest is passed separately in Lesson 5A.
+
+## Follow the request from outside the container
+
+The next worked example used the hypothetical mapping `127.0.0.1:9000:8000`, with the container already running and its application listening on port 8000. Asked which browser URL to use, the learner selected `http://127.0.0.1:8000/health`. For this mapping, the correct browser URL is `http://127.0.0.1:9000/health`.
+
+The browser begins on the computer outside the container. It must enter through the computer's published port, 9000. Docker then forwards that connection to the application's port, 8000, inside the container:
+
+```mermaid
+flowchart LR
+    B["Browser requests 127.0.0.1:9000/health"] --> H["Computer entrance: port 9000"]
+    H -->|Docker forwards| C["Container server: port 8000"]
+```
+
+Read the mapping as `computer address : computer port : container port`. The two ports do different jobs; they can have different numbers. The server stays on 8000 inside the container even when the browser uses 9000 outside. This is an explanatory mapping, not a separately executed 9000-port experiment. The verified CI mapping used 8000 on both sides, which can hide this distinction.
+
+Combined narrow retest: complete the trace for this example: `docker ____` starts the container; then the browser requests `http://127.0.0.1:____/health`.
+
+Build/run and external/internal port understanding need reinforcement; the combined retest is unanswered. The running package and CI results remain verified separately from learner understanding.
 
 Sources: [Dockerfile instructions](https://docs.docker.com/build/concepts/dockerfile/), [Docker build practices and digest pinning](https://docs.docker.com/build/building/best-practices/), [GitHub workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax), and [standard public-runner billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
