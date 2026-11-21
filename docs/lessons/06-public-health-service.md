@@ -18,7 +18,7 @@ flowchart LR
 
 Render's public-facing server is a proxy: it receives a request and forwards it to our application. Visitors use the assigned HTTPS address; they do not need to enter our container's internal port. Our server still listens on `0.0.0.0:8000`, which lets the proxy reach it through the container's network interface.
 
-The public hostname will be assigned when a service is actually created. No public URL has been verified yet. Once deployed, we must test the assigned address with `/health` appended. Our current application has no route for `/`, so a 404 at the bare address would not by itself establish that `/health` is broken.
+The actual public health address is now [https://shiftwatch-iejl.onrender.com/health](https://shiftwatch-iejl.onrender.com/health). It returned HTTP 200 with `{"status":"ok"}` in both the public HTTP check and browser. Our current application has no route for `/`, so a 404 at the bare address does not by itself establish that `/health` is broken.
 
 ## What we prepared in render.yaml
 
@@ -36,7 +36,7 @@ The public hostname will be assigned when a service is actually created. No publ
 
 The current free-service documentation describes idle spin-down after 15 minutes, a cold start on a later request, and 750 shared free instance hours per workspace each month. Files changed by the running service can disappear on restart, redeploy, or spin-down. Therefore, our later hosted SQLite sessions will be temporary; durable session storage is not promised.
 
-Free compute does not establish every aspect of a workspace's billing behavior. Bandwidth/build usage, payment method, spend limits, remaining quota, and eligibility must be inspected on the actual account. This proposal contains no database, disk, paid compute, or extra service. We have not created any cloud resource or changed billing.
+Free compute does not establish every aspect of a workspace's billing behavior. We inspected bandwidth/build usage, payment status, spending controls, and remaining quota on the actual account before creation. The approved Blueprint created one free web service, with no database, disk, paid compute, or extra service. No workspace or billing setting changed.
 
 ## What has actually been checked
 
@@ -44,12 +44,16 @@ The YAML parsed successfully, and nine project-specific checks passed: one free 
 
 This was local consistency checking, not Render's validator or a deployment test. A direct download of Render's published schema returned a Cloudflare challenge. The first Windows-browser inspection also stopped because the tool could not verify its current URL. A later in-app browser handoff let the learner sign in to the existing account. We then inspected workspace quota, spending controls, and billing configuration without changing them. Detailed account/billing evidence stays local.
 
-Render's creation review now shows the ShiftWatch repository, main branch, root Blueprint file, and one web service named `shiftwatch`; the Blueprint name is `ShiftWatch`. The account review and form preparation are done. We stopped before `Deploy Blueprint` pending launch approval. No cloud resource or public URL exists yet. After an approved deployment, verify the public response and save the actual source/deployment identity and raw HTTP evidence. Day 1 remains partial until these and its remaining learning/review gates pass.
+After reviewing the concrete creation form, the learner instructed us to continue. We created the `ShiftWatch` Blueprint and its `shiftwatch` Docker web service. Render reported `Deploy succeeded | Live` for source `5ccc2a4fa6b023d3819abf3f74ac8917964271fb` on the Free plan. Its visible deployment duration was 38.2 seconds, which is not a request-latency or cold-start benchmark.
+
+We ran the same HTTP checker against the actual public URL: health returned 200 with the expected JSON, POST to the GET-only health route returned 405, and a missing route returned 404. We also opened `/health` in a browser and saw the JSON. Deployment identity, source hashes, raw HTTP output, a redacted visible dashboard observation, and the screenshot are saved under `reports/day01/hosted-2026-11-21/`. The original dashboard observation stays local because it includes internal addresses. Runtime files match the source that passed the six CI tests; those tests were not rerun on the host itself.
+
+This connects the full path: a visitor contacts the public address, Render forwards the request to our container, Uvicorn receives it, and FastAPI runs `health()`. Your laptop is no longer the machine serving this public response. Free-host limitations still apply. Day 1's hosted-health requirement is met; the remaining learner/review gaps remain explicit.
 
 ## One taught check for the later review
 
-After deployment, which computer runs Uvicorn: your laptop or Render's computer? Explain why another person should use the assigned public address instead of `127.0.0.1`.
+When your laptop is switched off, which computer would handle a friend's request to this public health URL? Explain using where Uvicorn is now running.
 
-This check is prepared but unassessed. Approval of the prepared free-service creation is the immediate next task.
+This check is unassessed and is the immediate next task. Correct Docker answers are already recorded separately; they are not being repeated as new prerequisites.
 
 Sources checked on 21 November 2026: [web services and port binding](https://render.com/docs/web-services), [Blueprint fields](https://render.com/docs/blueprint-spec), [health checks](https://render.com/docs/health-checks), and [free-service limitations](https://render.com/docs/free).

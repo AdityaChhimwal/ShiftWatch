@@ -2,7 +2,7 @@
 
 Batch ML monitoring and reliability evaluation, built alongside guided lessons.
 
-Current stage: **Day 1, partial**. A local health-only FastAPI service works. Data audit, model, monitoring, storage, replay evaluation, and public hosting are pending. The project is assistant-led with learner understanding checked progressively.
+Current stage: **Day 1, partial**. A health-only FastAPI service is deployed on Render Free: [public health endpoint](https://shiftwatch-iejl.onrender.com/health). Real HTTPS checks observed health 200/JSON, unsupported method 405, and missing route 404. Data audit, model, monitoring, storage, replay evaluation, and frontend are pending. The project is assistant-led with learner understanding checked progressively.
 
 Read [the first service lesson](docs/lessons/01-first-service.md) for the purpose, code walkthrough, and setup explanation. Current evidence and exactly one next task are in [PROJECT_STATE.md](PROJECT_STATE.md). The detailed scope/evaluation contract is [ShiftWatch-14-Day-Plan.md](ShiftWatch-14-Day-Plan.md).
 
@@ -14,9 +14,9 @@ Day 1 has a [six-lesson teaching roadmap](docs/day01-roadmap.md). [Lesson 3](doc
 
 [Lesson 5A](docs/lessons/05-version-history.md) traces working files, staging, local commits, and pushing to the existing GitHub repository. The published baseline is `b801aa1`; its narrow learner check passed after correction and retest.
 
-[Lesson 5B](docs/lessons/05b-packaging-the-service.md) adds a pinned Docker recipe and automated container checks. A [clean Linux CI run passed](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409): dependency consistency, six tests (four schema/two startup-checker), and real HTTP responses 200/405/404. Raw failed/passing logs, image identity, and hashes are retained in the [packaging report](reports/day01/packaging-2026-11-21/). The narrow learner build/run/port check passed after correction/retest. The local Windows Docker engine remains unavailable, and the service is not publicly deployed.
+[Lesson 5B](docs/lessons/05b-packaging-the-service.md) adds a pinned Docker recipe and automated container checks. A [clean Linux CI run passed](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409): dependency consistency, six tests (four schema/two startup-checker), and real HTTP responses 200/405/404. Raw failed/passing logs, image identity, and hashes are retained in the [packaging report](reports/day01/packaging-2026-11-21/). The narrow learner build/run/port check passed after correction/retest. The local Windows Docker engine remains unavailable; container execution was verified on Linux CI and the host.
 
-[Lesson 6](docs/lessons/06-public-health-service.md) prepares the public-health deployment. [render.yaml](render.yaml) proposes one free Docker web service with manual deploys and `/health`. YAML/local consistency checks passed; Render account, eligibility/quota/billing review, official validation, and deployment remain pending.
+[Lesson 6](docs/lessons/06-public-health-service.md) traces the public deployment. After account review and launch approval, [render.yaml](render.yaml) created one free Docker web service with manual source deployments and `/health`. The [hosted verification report](reports/day01/hosted-2026-11-21/) records source `5ccc2a4`, actual deployment identity, HTTP observations, screenshot, and hashes. Render Free can sleep when idle; later local SQLite/session data will be temporary. The learner's final hosting check remains pending.
 
 ## Run the current local service
 

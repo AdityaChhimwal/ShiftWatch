@@ -1,0 +1,58 @@
+{
+  "observed_at_utc": "2026-11-21T14:19:09.688727+00:00",
+  "client_date": "2026-11-21",
+  "client_timezone": "Asia/Calcutta",
+  "public_base_url": "https://shiftwatch-iejl.onrender.com",
+  "public_health_url": "https://shiftwatch-iejl.onrender.com/health",
+  "render_service_id": "srv-dc0qd961egvs738o8ts0",
+  "render_blueprint_id": "exs-dc0q91uk1f9s739uo3r0",
+  "render_deployment_id": "dep-dc0qd9e1egvs738o8v40",
+  "render_observed_status": "Deploy succeeded | Live",
+  "render_observed_runtime_and_plan": "Docker / Free",
+  "configured_region": "singapore",
+  "render_displayed_deployment_duration_seconds": 38.2,
+  "duration_scope": "UI-displayed deployment duration; not request latency or a cold-start benchmark",
+  "deployed_source_commit": "5ccc2a4fa6b023d3819abf3f74ac8917964271fb",
+  "runtime_files_match_passing_ci_source": "a4e4ad4aeeb0c6e2bd2dd750bd1f9bb9c956b1d4",
+  "ci_run_url": "https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409",
+  "deployed_source_sha256": {
+    "Dockerfile": "886aefbfe1eb133e23cc4b351e3ece25a04552e3cce194fc280a0b626c61cf3b",
+    "requirements.txt": "74a28a2fafd7c29576d9cf9ccc2ce60a9d84aedae59403179fa87acda5f95a08",
+    "src/shiftwatch/api.py": "60e5f9b442fd4efdc801f516ad0458e39d00f1b93128cea38fd6264620e3b9aa",
+    "src/shiftwatch/contracts.py": "a3834f16ccbc081959eca60a9d3b675fae8994b7ab577e4e380ea9010e065f71",
+    "render.yaml": "305794fa63c2452bd4fb35ceb227ef07a3eba075ee858c95a2e0a00bb2afc9b0"
+  },
+  "external_https_observations": {
+    "base_url": "https://shiftwatch-iejl.onrender.com",
+    "checks": [
+      {
+        "method": "GET",
+        "path": "/health",
+        "status": 200,
+        "body": {
+          "status": "ok"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/health",
+        "status": 405
+      },
+      {
+        "method": "GET",
+        "path": "/__smoke_missing__",
+        "status": 404
+      }
+    ]
+  },
+  "browser_observation": "Opened actual public /health URL; rendered text was {\"status\":\"ok\"}",
+  "dashboard_evidence": "render-deployment-state.txt is a visible UI observation, not a full log export; workspace label and internal addresses redacted",
+  "original_ui_observation_sha256": "152da27645a3bd568f48c8d0772f78bb16f15210652194c31616ebffde85005a",
+  "limitations": [
+    "Health-only application; no data audit, trained model, monitoring, label storage, or frontend.",
+    "Free-service idle spin-down and temporary filesystem remain applicable.",
+    "Host capacity, cold-start latency, p95 latency, and ML dependency compatibility are not measured here.",
+    "Local Windows Docker engine remains unavailable.",
+    "Lesson 6 learner check and remaining Day 1 review gaps are pending."
+  ]
+}
