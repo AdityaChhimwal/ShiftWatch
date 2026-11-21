@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-21 (Asia/Calcutta).
 Current milestone: Day 1 — define the problem and remove access risk.
-Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-observed-error checks passed. Lesson 5 is current. Local health/schema foundations exist; hosted service and other Day 1 gates remain pending. Calendar Day 4 has arrived while the Day 1 milestone is unfinished; the 29 November target is at risk, and the 1 December outer deadline has not been moved.
+Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-observed-error checks passed. Lesson 5A's Git walkthrough is current; the existing foundation has been committed and pushed. Local health/schema foundations exist; runtime reproduction, hosted service, and other Day 1 gates remain pending. Calendar Day 4 has arrived while the Day 1 milestone is unfinished; the 29 November target is at risk, and the 1 December outer deadline has not been moved.
 
 ## Verified facts and evidence
 
@@ -10,7 +10,7 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 - Read the supplied fourteen-day plan. Renamed it to `ShiftWatch-14-Day-Plan.md`, corrected the stale seven-day filename in its proposed layout, and added the learner's subsequent schedule/learning-priority override. Technical scope and evaluation requirements are retained. The historical statement that it supersedes the seven-day plan is intentional.
 - Original plan SHA-256 before this edit: `D024AFFCC4C36F70AE391CC255AE7404C06AF7DC0E97A8EB7C660D8DCA5BD19D`.
 - Created the ShiftWatch-specific `AGENTS.md` and initially assigned an independent problem-design exercise. Following the learner's correction, replaced `docs/day01-problem-design.md` with a guided introduction and one small check after a worked example. The earlier assignment was premature; it was not a learner failure. These are documentation, not implemented or validated product behavior.
-- Kickoff facts: Python 3.13.3, pip 25.0.1, and Git 2.47.1.windows.2 executed. No environment/dependency manifest or Git repository existed then. On 18 November, created `.venv`, saved actual resolved packages to `requirements.txt`, and initialized local branch `main`. No commit or remote exists.
+- Kickoff facts: Python 3.13.3, pip 25.0.1, and Git 2.47.1.windows.2 executed. No environment/dependency manifest or Git repository existed then. On 18 November, created `.venv`, saved actual resolved packages to `requirements.txt`, and initialized local branch `main`. No commit or remote existed at that point; the 21 November publication is recorded below.
 - Docker CLI 29.7.2 exists, but its `desktop-linux` engine was unavailable (`dockerDesktopLinuxEngine` named pipe missing). Container execution is not verified.
 - Git Bash executables exist, but Bash is absent from the tool shell PATH and explicit invocation failed with an MSYS access-denied error. This does not establish failure in the learner's own terminal.
 - Tool commands/observations are saved in `reports/day01/tool-audit.md`. The original six kickoff documents and their verified original hashes are preserved in `reports/day01/kickoff-snapshot/`. `reports/day01/kickoff-artifacts.sha256` and `reports/day01/mentoring-update-artifacts.sha256` describe their respective historical revisions; later document edits do not overwrite these manifests.
@@ -26,7 +26,7 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 - Executed `examples/contracts/trace_identity.py`: input order hour-09/hour-10, label order hour-10/hour-09; ID lookup selected hand-written estimates 90/120 and produced illustrative absolute errors 5/30. Verified both matches against the hand-worked example; saved raw output in `reports/day01/contract-draft-2026-11-18/identity-trace.json`. These are invented teaching values, not model metrics. No new dependencies or service routes were added.
 - The previous state and its hash are preserved in `reports/day01/contract-draft-2026-11-18/before-state.md` and `before-state.sha256`; `after.sha256` records this draft/lesson/code/output revision. Earlier evidence manifests remain historical.
 - Earlier learner answer selected the correct prediction (90 versus actual 100) but proposed matching by predicted/actual values as an alternative. Corrected explicitly: record_id establishes identity; numerical values measure error afterward. The subsequent Lesson 3 counterexample is now passed; the earlier misconception is retained here as learning history. No duplicate-label independent checkpoint has been attempted.
-- Proposed six numbered Day 1 lessons, plus the prior unnumbered introduction, in `docs/day01-roadmap.md`. The count is an assistant teaching structure, not a prescribed plan count or six completed gates. Lesson 4 (architecture/statuses) is current; reproducible Git/Docker setup and hosted health/review are Lessons 5–6.
+- Proposed six numbered Day 1 lessons, plus the prior unnumbered introduction, in `docs/day01-roadmap.md`. The count is an assistant teaching structure, not a prescribed plan count or six completed gates. Lesson 4's narrow check subsequently passed; reproducible Git/Docker setup and hosted health/review are Lessons 5–6.
 - Implemented the draft `LabelRecord` Pydantic schema in `src/shiftwatch/contracts.py` and a runnable `examples/contracts/trace_validation.py`. Four assistant-authored tests in `tests/test_contracts.py` passed, checking preserved valid/zero counts, strict count types, ID bounds, and required/extra fields. Trace verified six expected outcomes, including a well-formed unknown ID passing shape checks only. Saved outputs in `reports/day01/validation-2026-11-18/`. No HTTP routes, join/storage behavior, feature schema, or dependencies were added.
 - Saved Lesson 3 at `docs/lessons/03-input-rules.md`. The preceding state is preserved in the validation report's `before-state.md` with hash; current revision hashes are in `after.sha256`. Earlier raw outputs and manifests remain unchanged historical evidence.
 - Learner's Lesson 3 retest answer: "lebel-120 belongs to this because it matches record_id." Correct saved prediction and identity key. Clarified that 120 is the saved prediction, 90 is the actual label, and absolute error is 30. The narrow ID-reasoning check is passed after correction/retest; this does not establish duplicate-label handling or validation proficiency.
@@ -35,6 +35,8 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 - On 21 November the learner correctly explained that a changed frequency of inputs need not make observed performance poor when estimates remain accurate. Lesson 4's narrow distribution-versus-error check is passed. No other unassessed skills are inferred.
 - Learner requested meaningful commits/pushes after lessons. Verified the connected GitHub identity owns the existing empty public `AdityaChhimwal/ShiftWatch` repository with push access; connected local origin to its HTTPS URL and verified it had no refs. Existing Git commit identity is configured; credentials were not displayed. Initial baseline publication is being prepared, not yet claimed successful in this revision.
 - Four existing schema tests and pip dependency consistency passed again on 21 November before initial publication. Docker's desktop-linux engine remained unavailable; a bounded Docker Desktop start attempt timed out after 45 seconds. Lesson 5 will record actual packaging/reproduction results separately.
+- Committed the reviewed existing foundation as `b801aa11f25f7e611ae22d0282b9e1bcb01863e7` (`feat: add health service, label validation, and guided project baseline`) and successfully pushed `main` to the existing GitHub origin on 21 November. The first push established upstream tracking. Reviewed 66 staged files; the targeted credential-pattern scan reported no matches. This is not a claim of an exhaustive security audit.
+- Saved `docs/lessons/05-version-history.md` as Lesson 5A: connected explanation and actual commit/push trace. Keep Docker/reproduction as Lesson 5B within the existing Lesson 5 scope to avoid introducing several unfamiliar tools in one lesson. Git comprehension remains unassessed; application code is unchanged in this teaching revision. Read-only local/remote verification output is saved under `reports/day01/git-2026-11-21/`.
 
 ## Decisions and existing constraints
 
@@ -48,26 +50,27 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 - Keep the plan's audited workload, leakage exclusions, chronological roles, dummy/candidate comparison, separate channels/replays, P0/P1 evaluation, delayed-label guarantees, and final freeze.
 - Render remains the plan's first hosting candidate; no host/account/billing choice has been made. Hosting changes, publication, and tester messages need appropriate authorization when concrete.
 - Ordinary meaningful commits and pushes to `AdityaChhimwal/ShiftWatch` are explicitly authorized after lessons. Use real dates, describe actual changes, inspect staged contents, and run appropriate checks. Publish existing work as today's baseline. GitHub publication is distinct from a hosted working backend.
+- Schedule response on 21 November: remove optional visual polish/additional charts first, following the plan's scope-cut order; retain the minimal frontend and every correctness/evaluation/learning gate. This is a scope limit, not evidence that the remaining workload will fit. Day 1 is still partial, so the 29 November target remains at risk; measured learner hours remain unknown.
 
 ## Unresolved assumptions, defects, and learning gaps
 
 - Interview date/time is intentionally out of scope following the learner's clarification; do not ask again. Six hours/day is confirmed availability, not measured effort or a guarantee of completion in fourteen days.
 - Git Bash is confirmed as the learner terminal. Measured learner hours are unknown; assistant runtime is not learner effort.
-- Environment, pinned web-service dependencies, local Git initialization, and local health response are verified. Draft contracts, a problem statement, and an architecture sketch now exist but have not been reviewed by the learner. Hosted health URL and remaining Day 1 learning outcomes are outstanding. No initial Git commit or clean-machine reproduction yet.
+- Environment, pinned web-service dependencies, local Git initialization, initial commit/push, and local health response are verified. Draft contracts, a problem statement, and an architecture sketch now exist but have not been reviewed fully by the learner. Hosted health URL, clean-machine reproduction, and remaining Day 1 learning outcomes are outstanding.
 - The example features/timestamps are synthetic and incomplete. Day 2 must establish the actual allowlist, units/ranges/categories, time-zone treatment, and CSV mapping. Whole-batch versus partial-row rejection and the final response schema remain guided design decisions before later implementation.
 - Docker engine access and Bash execution in this sandbox are setup limitations, not diagnosed application defects.
 - Render account access/eligibility, available quota, effective resources, payment/spend settings, and deployment authorization are unverified. Public docs do not establish these account facts.
 - Day 11 tester availability and invitation have not been established. No external validation exists.
 - Dataset archive/schema/terms audit and exact boundaries remain Day 2 work. No source counts, feature allowlist, split boundaries, or results have been invented.
-- This is the learner's first actual project. Missing-label performance distinction and corrected ID matching are passed. Other status meanings, validation reasoning, and Python/SQL/statistics implementation proficiency remain unassessed. PSI calculation, event recall/delay, duplicate-label join, and independent core-test repair are unattempted and require teaching/guided practice.
+- This is the learner's first actual project. Missing-label performance distinction, corrected ID matching, and distribution-versus-observed-error distinction are passed. Other status meanings, validation reasoning, Git reasoning, and Python/SQL/statistics implementation proficiency remain unassessed. PSI calculation, event recall/delay, duplicate-label join, and independent core-test repair are unattempted and require teaching/guided practice.
 - Tool sandbox restricted temporary installation files, network package resolution, and loopback connections. Using a project-local temp directory and approved execution for installs/local HTTP checks resolved this session's setup obstacles. See SESSION.md. These are execution-environment observations, not learner-terminal defects.
 - The previously missing `ShiftWatch-Project-Chat-Prompt.md` was created on 2026-11-13 from the confirmed working agreement and user clarifications. Its dated Day 1 snapshot is not evidence of progress beyond the state recorded here.
 
 ## Review against Day 1 pass criteria
 
 - File/tool discovery: checked; limitations recorded.
-- Problem-design learning: missing-label, narrow identity, and distribution-versus-error checks passed; other explanations unassessed. Lessons 1–4 and the six-lesson roadmap are saved; Lesson 5 is current.
-- Environment and Git setup: project-local Python/pip and web dependencies verified; Git initialized, no commit/remote.
+- Problem-design learning: missing-label, narrow identity, and distribution-versus-error checks passed; other explanations unassessed. Lessons 1–4, Lesson 5A, and the six-lesson roadmap are saved; Lesson 5A's check is current.
+- Environment and Git setup: project-local Python/pip and web dependencies verified; baseline committed and pushed to the existing origin. Clean reproduction and Docker verification remain pending.
 - Draft contracts/problem statement/architecture: assistant-proposed draft saved; learner review pending. Reordered-ID teaching example executed and checked, not a production join implementation.
 - Hosted health response: not done.
 - Local health response: verified; hosted response still pending.
@@ -77,4 +80,4 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 
 ## Next task
 
-Work through Lesson 5: publish the verified baseline, package the service reproducibly, and trace the difference between a local commit and a push.
+Answer Lesson 5A's taught check: after a local commit but before a push, does GitHub contain that commit, and which command sends it there?

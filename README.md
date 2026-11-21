@@ -12,6 +12,8 @@ Day 1 has a [six-lesson teaching roadmap](docs/day01-roadmap.md). [Lesson 3](doc
 
 [Lesson 4](docs/lessons/04-system-flow.md) reviews the intended architecture and separate monitoring statuses. Its JSON report example is explicitly synthetic, not a working monitor response.
 
+[Lesson 5A](docs/lessons/05-version-history.md) traces working files, staging, local commits, and pushing to the existing GitHub repository. The published baseline is `b801aa1`; Docker packaging and clean-environment reproduction remain pending.
+
 ## Run the current local service
 
 From Git Bash opened in this project folder, using the environment already installed here:
