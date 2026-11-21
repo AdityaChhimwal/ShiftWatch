@@ -14,6 +14,8 @@ Day 1 has a [six-lesson teaching roadmap](docs/day01-roadmap.md). [Lesson 3](doc
 
 [Lesson 5A](docs/lessons/05-version-history.md) traces working files, staging, local commits, and pushing to the existing GitHub repository. The published baseline is `b801aa1`; Docker packaging and clean-environment reproduction remain pending.
 
+[Lesson 5B](docs/lessons/05b-packaging-the-service.md) adds a pinned Docker recipe and automated container checks. The local Docker engine is unavailable; the first clean Linux CI result is pending. See [Actions](https://github.com/AdityaChhimwal/ShiftWatch/actions) for actual run status. Neither a Dockerfile nor a passing CI run is a public deployment.
+
 ## Run the current local service
 
 From Git Bash opened in this project folder, using the environment already installed here:

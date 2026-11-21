@@ -1,0 +1,65 @@
+name: Verify service
+
+on:
+  push:
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - requirements.txt
+      - src/**
+      - tests/**
+      - scripts/smoke_health.py
+      - .github/workflows/verify.yml
+  pull_request:
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - requirements.txt
+      - src/**
+      - tests/**
+      - scripts/smoke_health.py
+      - .github/workflows/verify.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  container:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Build the runtime image
+        run: docker build --tag shiftwatch:ci .
+
+      - name: Record the image and Python version
+        run: |
+          docker image inspect shiftwatch:ci --format '{{.Id}}'
+          docker run --rm shiftwatch:ci python --version
+
+      - name: Run label schema tests inside the image
+        run: >-
+          docker run --rm
+          --mount "type=bind,source=$GITHUB_WORKSPACE/tests,target=/checks,readonly"
+          shiftwatch:ci python -m unittest discover -s /checks -v
+
+      - name: Start the container and check real HTTP responses
+        run: |
+          docker run --detach --name shiftwatch-ci --publish 127.0.0.1:8000:8000 shiftwatch:ci
+          python3 scripts/smoke_health.py --url http://127.0.0.1:8000
+
+      - name: Show server logs and remove the container
+        if: always()
+        run: |
+          if docker container inspect shiftwatch-ci >/dev/null 2>&1; then
+            docker logs shiftwatch-ci
+            docker rm --force shiftwatch-ci
+          fi

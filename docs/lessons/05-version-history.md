@@ -87,6 +87,6 @@ So that commit was already in local history even though no uncommitted staged ch
 
 Retest: after successfully running `git add` and `git commit`, where is the new saved version recorded: the staging area or local Git history?
 
-The retest has not yet been answered. Lesson 5 as a whole remains partial while this distinction, runtime reproduction, and container verification are pending.
+Retest answer on 21 November: "It is now recorded in the local Git history." Correct. The staging-versus-local-history distinction is passed after correction and retest. Together with the correct push answer, this passes Lesson 5A's narrow check. Lesson 5B now covers runtime reproduction and container verification.
 
 The official [Git commit documentation](https://git-scm.com/docs/git-commit) and [Git push documentation](https://git-scm.com/docs/git-push) provide the full command behavior. This lesson uses their basic workflow on our actual project.

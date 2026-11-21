@@ -1,0 +1,9 @@
+# Allow only the files needed by this initial service into the build context.
+**
+!Dockerfile
+!.dockerignore
+!requirements.txt
+!src/
+!src/**
+**/__pycache__/
+**/*.py[cod]

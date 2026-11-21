@@ -10,7 +10,7 @@ The detailed plan prescribes deliverables/pass criteria, not a lesson count. Gro
 | 2 | Records, batches, stable IDs, and separate label messages | Draft contract and runnable synthetic trace exist. Initial value-matching misconception corrected; the ID counterexample retest in Lesson 3 is passed. |
 | 3 | Executable input rules and useful failures | Draft label schema/trace and four assistant-authored tests pass. ID reasoning retest passed; validation understanding unassessed. |
 | 4 | Whole system flow and three truthful statuses | Connected architecture/report design saved; the distribution-versus-error comprehension check passed on 21 November. |
-| 5 | Git history, dependency reproduction, and initial Docker packaging | Part A: baseline committed/pushed; learner correctly identified push to GitHub. Staging versus committed local history corrected, narrow retest pending. Part B: container verification and clean reproduction pending. |
+| 5 | Git history, dependency reproduction, and initial Docker packaging | Part A: narrow Git check passed after correction/retest; commits pushed. Part B: Docker recipe, HTTP checker, and CI workflow implemented; first CI result and learner check pending. |
 | 6 | Hosted health check, access constraints, and Day 1 acceptance review | Not deployed. Host/account/billing/access checks and appropriate publication/account authorization remain pending. |
 
 DMLS reading supports these lessons inside the same daily budget. Tester availability, unresolved Day 2 data assumptions, and the day's evidence/checkpoint review are part of the final Day 1 review. They are not extra numbered lessons. No contact will be sent on the learner's behalf without explicit instruction.
