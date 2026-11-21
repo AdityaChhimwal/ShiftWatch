@@ -8,7 +8,7 @@ on:
       - requirements.txt
       - src/**
       - tests/**
-      - scripts/smoke_health.py
+      - scripts/**
       - .github/workflows/verify.yml
   pull_request:
     paths:
@@ -17,7 +17,7 @@ on:
       - requirements.txt
       - src/**
       - tests/**
-      - scripts/smoke_health.py
+      - scripts/**
       - .github/workflows/verify.yml
   workflow_dispatch:
 
@@ -45,7 +45,7 @@ jobs:
           docker image inspect shiftwatch:ci --format '{{.Id}}'
           docker run --rm shiftwatch:ci python --version
 
-      - name: Run schema and startup-checker tests inside the image
+      - name: Run offline unit tests inside the image
         run: >-
           docker run --rm
           --mount "type=bind,source=$GITHUB_WORKSPACE/tests,target=/checks,readonly"
