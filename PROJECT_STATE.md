@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-21 (Asia/Calcutta).
 Current milestone: Day 1 — define the problem and remove access risk.
-Status: **partial**. Missing-label, narrow ID-matching, distribution-versus-observed-error, Git, and Lesson 5B's narrow build/run/port checks passed. The clean Linux container and six tests remain verified. Lesson 6 now has a proposed Render configuration, connected lesson, and nine passing local consistency checks; account access, official host validation, billing/eligibility review, and public deployment are pending. The local Docker engine and other Day 1 gates remain unresolved. Calendar Day 4 has arrived while the Day 1 milestone is unfinished; the 29 November target is at risk, and the 1 December outer deadline has not been moved.
+Status: **partial**. Missing-label, narrow ID-matching, distribution-versus-observed-error, Git, and Lesson 5B's narrow build/run/port checks passed. The clean Linux container and six tests remain verified. Authenticated Render workspace quota/spending/billing review and the ShiftWatch Blueprint creation form are prepared; launch approval and public-health verification are pending. The proposal passed nine local consistency checks and loaded in Render's review without a visible error; no service has been created. The local Docker engine and other Day 1 gates remain unresolved. Calendar Day 4 has arrived while the Day 1 milestone is unfinished; the 29 November target is at risk, and the 1 December outer deadline has not been moved.
 
 ## Verified facts and evidence
 
@@ -49,6 +49,11 @@ Status: **partial**. Missing-label, narrow ID-matching, distribution-versus-obse
 - Prepared Lesson 6 and `render.yaml` for one free Docker web service on the canonical main branch, proposed Singapore region, manual deploys, GET `/health`, and configured port 8000 matching the existing Dockerfile. YAML parsing and nine local consistency checks passed; actual output is saved in `reports/day01/hosting-prep-2026-11-21/validation.json`. This is not Render API/full-schema validation. A direct schema download returned a Cloudflare challenge; no challenge was solved. Production dependencies and tested runtime files are unchanged.
 - Browser inspection stopped before Render access because the computer-use tool could not confidently identify the Windows browser URL. No host account, quota, billing, authentication, service creation, or deployment action occurred. Asked the learner whether a Render account already exists; answer pending. Saved hosting-source notes and hashes. Lesson 6's public-host request trace is taught/prepared; its learner check is unassessed. Day 1 remains partial.
 
+- Learner confirmed an existing Render account. Opened the official dashboard in the in-app browser using its tracked URL; it displayed `https://dashboard.render.com/login-next`. Left that tab open as a user sign-in handoff. No credentials were entered, no account facts/billing settings were inspected, and no service was created. Account existence is learner-reported; authenticated access remains pending.
+
+- Following the learner's "Signed in", observed authenticated Render access and inspected workspace quota, spending controls, and billing configuration without changes. Kept detailed account/billing evidence under ignored `.tmp/` rather than the public repository. The existing integration exposed the canonical ShiftWatch repository. Prepared the new Blueprint form with name `ShiftWatch`, branch `main`, root `render.yaml`; Render displayed one `Create web service shiftwatch` configuration. No new integration access or resource was granted/created. Saved a local review screenshot and retained the tab. Stopped before `Deploy Blueprint` pending explicit launch approval under the working agreement. Public-safe review notes are in `reports/day01/hosting-review-2026-11-21/NOTES.md`.
+- The host review revealed that Blueprint configuration changes sync automatically by default, separately from `autoDeployTrigger: "off"` for ordinary source updates. Updated Lesson 6 to avoid claiming all pushes/configuration changes are prevented from affecting the host. The reviewed free-service file and all tested runtime files are unchanged.
+
 ## Decisions and existing constraints
 
 - Use only `D:\good_projects\shiftwatch`; CatalogLink/VisionGuard are outside this task.
@@ -70,7 +75,7 @@ Status: **partial**. Missing-label, narrow ID-matching, distribution-versus-obse
 - Environment, pinned web-service dependencies, commit/push, local health response, and one clean Linux Docker build/run are verified. Draft contracts, a problem statement, and an architecture sketch now exist but have not been reviewed fully by the learner. Hosted health URL, local Windows Docker operation, later ML compatibility, and remaining Day 1 learning outcomes are outstanding.
 - The example features/timestamps are synthetic and incomplete. Day 2 must establish the actual allowlist, units/ranges/categories, time-zone treatment, and CSV mapping. Whole-batch versus partial-row rejection and the final response schema remain guided design decisions before later implementation.
 - Docker engine access and Bash execution in this sandbox are setup limitations, not diagnosed application defects.
-- Render account access/eligibility, available quota, effective resources, payment/spend settings, and deployment authorization are unverified. Public docs do not establish these account facts.
+- Render account access and current workspace quota/spending/billing settings have been inspected. The one-free-service proposal loaded in the creation review without a visible configuration error. Launch approval, actual resource creation, measured host capacity, and public-health verification remain pending. Detailed account/billing evidence is local only; no workspace setting was changed.
 - Day 11 tester availability and invitation have not been established. No external validation exists.
 - Dataset archive/schema/terms audit and exact boundaries remain Day 2 work. No source counts, feature allowlist, split boundaries, or results have been invented.
 - This is the learner's first actual project. Missing-label performance distinction, corrected ID matching, distribution-versus-observed-error distinction, narrow Git, and narrow Docker build/run/port checks are passed. Public-host request tracing, other status meanings, validation reasoning, and Python/SQL/statistics implementation proficiency remain unassessed. PSI calculation, event recall/delay, duplicate-label join, and independent core-test repair are unattempted and require teaching/guided practice.
@@ -81,14 +86,14 @@ Status: **partial**. Missing-label, narrow ID-matching, distribution-versus-obse
 
 - File/tool discovery: checked; limitations recorded.
 - Problem-design learning: missing-label, narrow identity, distribution-versus-error, Lesson 5A, and narrow Lesson 5B checks passed. Lesson 6 is prepared/current; its check and other explanations remain unassessed.
-- Environment and Git setup: project-local Python/pip and web dependencies verified; meaningful commits pushed to the existing origin. A clean Linux Docker build/run passed dependency consistency, six tests, and HTTP checks. Local Windows engine operation remains unavailable. Proposed host settings passed local consistency checks, with actual host/account checks pending.
+- Environment and Git setup: project-local Python/pip and web dependencies verified; meaningful commits pushed to the existing origin. A clean Linux Docker build/run passed dependency consistency, six tests, and HTTP checks. Local Windows engine operation remains unavailable. Proposed host settings passed local consistency checks, authenticated account readiness was reviewed, and the creation form is prepared pending launch approval.
 - Draft contracts/problem statement/architecture: assistant-proposed draft saved; learner review pending. Reordered-ID teaching example executed and checked, not a production join implementation.
 - Hosted health response: not done.
 - Local health response: verified; hosted response still pending.
 - Schedule/terminal clarification: strict 12–14 days, working calendar 18 November–1 December with release target 29 November; six hours/day, Git Bash, no interview date needed. Measured learner hours unknown.
-- Hosting access uncertainty resolved: not done.
+- Hosting account access: verified and workspace controls reviewed; no launch or public endpoint yet.
 - Milestone conclusion: **partial**, with no claim of Day 1 completion.
 
 ## Next task
 
-Establish Render account access, starting with the pending account-status answer, so the proposed free service can be reviewed against actual eligibility, quota, and billing settings before launch.
+Approve or decline creation of the prepared single free ShiftWatch Docker web service on Render.
