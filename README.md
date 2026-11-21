@@ -12,9 +12,9 @@ Day 1 has a [six-lesson teaching roadmap](docs/day01-roadmap.md). [Lesson 3](doc
 
 [Lesson 4](docs/lessons/04-system-flow.md) reviews the intended architecture and separate monitoring statuses. Its JSON report example is explicitly synthetic, not a working monitor response.
 
-[Lesson 5A](docs/lessons/05-version-history.md) traces working files, staging, local commits, and pushing to the existing GitHub repository. The published baseline is `b801aa1`; Docker packaging and clean-environment reproduction remain pending.
+[Lesson 5A](docs/lessons/05-version-history.md) traces working files, staging, local commits, and pushing to the existing GitHub repository. The published baseline is `b801aa1`; its narrow learner check passed after correction and retest.
 
-[Lesson 5B](docs/lessons/05b-packaging-the-service.md) adds a pinned Docker recipe and automated container checks. The local Docker engine is unavailable; the first clean Linux CI result is pending. See [Actions](https://github.com/AdityaChhimwal/ShiftWatch/actions) for actual run status. Neither a Dockerfile nor a passing CI run is a public deployment.
+[Lesson 5B](docs/lessons/05b-packaging-the-service.md) adds a pinned Docker recipe and automated container checks. A [clean Linux CI run passed](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409): dependency consistency, six tests (four schema/two startup-checker), and real HTTP responses 200/405/404. Raw failed/passing logs, image identity, and hashes are retained in the [packaging report](reports/day01/packaging-2026-11-21/). The local Windows Docker engine remains unavailable, and the service is not publicly deployed. The image/container learner check is pending.
 
 ## Run the current local service
 
@@ -26,7 +26,7 @@ From Git Bash opened in this project folder, using the environment already insta
 
 Open <http://127.0.0.1:8000/health>. Expected response: `{"status":"ok"}`. Press Ctrl+C in the terminal to stop the server. The Python/Uvicorn invocation was verified via local HTTP; a learner Git Bash/browser run is not yet recorded. This address is local only.
 
-Verified locally with Python 3.13.3. Exact installed library versions are saved in `requirements.txt`; dependency consistency passed. Full clean-environment installation/reproduction is pending. The canonical GitHub repository is [AdityaChhimwal/ShiftWatch](https://github.com/AdityaChhimwal/ShiftWatch). Changes are committed and pushed in meaningful lesson-sized steps with relevant checks; the initial publication captures the existing foundation.
+Verified locally with Python 3.13.3 and in a clean Linux amd64 Docker build with Python 3.13.18. Exact library versions are saved in `requirements.txt`; dependency consistency passed in both environments. This verifies the current small service, not later ML dependencies or all platforms. The canonical GitHub repository is [AdityaChhimwal/ShiftWatch](https://github.com/AdityaChhimwal/ShiftWatch). Changes are committed and pushed in meaningful lesson-sized steps with relevant checks.
 
 ## Schedule
 

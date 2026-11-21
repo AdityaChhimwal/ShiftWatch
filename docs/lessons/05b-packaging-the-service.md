@@ -67,6 +67,8 @@ The first run exposed a bug in my checker: Docker had created the container, but
 
 The workflow can succeed only after an actual run; its mere presence is not passing evidence. The verified outcome and any limitations are recorded in `PROJECT_STATE.md` and the packaging report. A CI container test also does not deploy a continuously available public app.
 
+The corrected [run 44899459409](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409) on source `a4e4ad4` passed on 21 November. It built the image from the pinned base, reported Python 3.13.18, passed dependency consistency and all six tests, and observed the expected 200/405/404 responses. The failed and passing logs plus the built image ID are retained in `reports/day01/packaging-2026-11-21/`. This verifies one clean Linux amd64 build and run; the local Windows engine remains unavailable. We did not publish the built image to a registry or deploy a public service.
+
 ## One check
 
 We successfully run `docker build` and have an image, but have not run a container. Is `/health` now being served by that image, or what still needs to happen?

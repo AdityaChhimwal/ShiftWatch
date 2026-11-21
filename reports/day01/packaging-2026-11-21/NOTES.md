@@ -19,3 +19,13 @@ request returned 500 Internal Server Error for API route and version http://%2F%
 Run [44899180692](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899180692), source revision `8437daaebb519677a7790df1d6c997d02da0f515`, built the image, passed dependency consistency, reported Python 3.13.18, and passed all four schema tests. Its HTTP step failed on `ConnectionResetError: [Errno 104] Connection reset by peer` immediately after container creation. The job cleaned up before server startup completed, so it did not establish a passing HTTP service.
 
 The checker retried `URLError` but did not catch this direct transport exception. Extend the bounded startup retry to `ConnectionError` and `TimeoutError`, retaining immediate failure for actual HTTP errors and incorrect response bodies. Add two regression tests covering startup transport recovery and immediate HTTP-error failure. CI mounts the checker scripts read-only alongside the tests; they remain outside the runtime image. Preserve this failed result and its raw log; the corrected run is still pending at this revision.
+
+## Corrected result
+
+Run [44899459409](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899459409) on tested source `a4e4ad4aeeb0c6e2bd2dd750bd1f9bb9c956b1d4` completed successfully. Observed Python 3.13.18, dependency consistency passed, and six tests passed (four schema plus two checker regression tests). The HTTP checker observed GET `/health` 200 with `{"status":"ok"}`, POST `/health` 405, and GET `/__smoke_missing__` 404. Server logs confirmed Uvicorn startup and those requests; cleanup removed the container afterward.
+
+Built image ID: `sha256:0256e6489d868e03b0566f6fcdd511ed8e41c39e6ed2e3eda2af547cb9384ee7`. The base index digest is recorded above and in the Dockerfile. This is one fresh Linux amd64 build/run, not a claim of bit-identical rebuilds or compatibility on every platform.
+
+`verification.json` contains the tested revision, run/job/step outcomes, image identifier, and observed HTTP results. `ci-first-failed.log` and `ci-passed.log` retain the decoded job logs; `python-image.txt` retains registry inspection output. `artifacts.sha256` records hashes of these report files. Source is available at the tested Git commit; the built image itself was not published to a registry.
+
+Remaining: local Windows engine operation, learner image/container check, public hosting, and later ML/persistence work. No model or monitoring result is reported here.
