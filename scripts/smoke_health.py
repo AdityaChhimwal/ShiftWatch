@@ -21,7 +21,7 @@ def check_health(base_url: str) -> dict:
             break
         except HTTPError:
             raise  # A live server returning an HTTP error is a failed check.
-        except URLError as error:
+        except (URLError, ConnectionError, TimeoutError) as error:
             if time.monotonic() >= deadline:
                 raise TimeoutError("Service did not become reachable within 30 seconds") from error
             time.sleep(0.5)

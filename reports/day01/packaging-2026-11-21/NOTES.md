@@ -13,3 +13,9 @@ request returned 500 Internal Server Error for API route and version http://%2F%
 - GitHub's official checkout v7 ref resolved to `3d3c42e5aac5ba805825da76410c181273ba90b1`; the workflow pins this revision.
 - Added a minimal image recipe, strict build-context allowlist, real-HTTP checker, and standard Ubuntu CI workflow. No application behavior, monitoring algorithm, model, or schema changed.
 - At initial publication, the CI outcome is pending. Local container operation, public deployment, ML compatibility, and later persistence behavior are not claimed.
+
+## First run and startup-checker correction
+
+Run [44899180692](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44899180692), source revision `8437daaebb519677a7790df1d6c997d02da0f515`, built the image, passed dependency consistency, reported Python 3.13.18, and passed all four schema tests. Its HTTP step failed on `ConnectionResetError: [Errno 104] Connection reset by peer` immediately after container creation. The job cleaned up before server startup completed, so it did not establish a passing HTTP service.
+
+The checker retried `URLError` but did not catch this direct transport exception. Extend the bounded startup retry to `ConnectionError` and `TimeoutError`, retaining immediate failure for actual HTTP errors and incorrect response bodies. Add two regression tests covering startup transport recovery and immediate HTTP-error failure. CI mounts the checker scripts read-only alongside the tests; they remain outside the runtime image. Preserve this failed result and its raw log; the corrected run is still pending at this revision.

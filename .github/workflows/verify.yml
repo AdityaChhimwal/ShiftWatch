@@ -45,10 +45,12 @@ jobs:
           docker image inspect shiftwatch:ci --format '{{.Id}}'
           docker run --rm shiftwatch:ci python --version
 
-      - name: Run label schema tests inside the image
+      - name: Run schema and startup-checker tests inside the image
         run: >-
           docker run --rm
           --mount "type=bind,source=$GITHUB_WORKSPACE/tests,target=/checks,readonly"
+          --mount "type=bind,source=$GITHUB_WORKSPACE/scripts,target=/tools,readonly"
+          --env PYTHONPATH=/app/src:/tools
           shiftwatch:ci python -m unittest discover -s /checks -v
 
       - name: Start the container and check real HTTP responses
