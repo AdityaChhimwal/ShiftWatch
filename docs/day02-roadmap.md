@@ -6,7 +6,7 @@ The day's question is: **what exactly are our observations, and how can we use t
 
 | Lesson | Concept and working result | Planned focused minutes | Actual stage |
 |---|---|---:|---|
-| 1 | Source provenance, original bytes, and what one observation means | 35 | Original archive acquired, headers/README inspected, checksums and cache behavior verified; guided conceptual check pending. |
+| 1 | Source provenance, original bytes, and what one observation means | 35 | Original archive acquired; headers/README, hashes, and cache verified. Nine local/Linux CI tests passed; guided conceptual check pending. |
 | 2 | Data quality: measure counts, missingness, duplicates, calendar gaps, and categories | 65 | Not started; source-document claims are not measured CSV counts. |
 | 3 | Leakage and feature availability: decide what may enter a prediction | 45 | Not started; no frozen feature allowlist yet. |
 | 4 | Five chronological roles: why one train/test split is insufficient here | 70 | Not started; exact whole-date boundaries not assigned. |

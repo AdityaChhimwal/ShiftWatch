@@ -25,3 +25,7 @@ These are attributed source claims, **not measured CSV results**:
 Do not resolve these disagreements using final outcomes or detector results. Metadata/schema inspection is allowed; target-value inspection is not part of this source step. Exact row counts, gaps, duplicates, category frequencies, time handling, allowlist/schema, and split boundaries remain pending.
 
 Sources: [UCI page](https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset), [exact archive URL](https://archive.ics.uci.edu/static/public/275/bike%2Bsharing%2Bdataset.zip), bundled README fingerprint in `source.json`, and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## Linux CI verification
+
+[Run 44925455815](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44925455815) on source `88a1f3c685af7f38e6635d0d46c4cf7e60b90eee` completed successfully. It built the container with Python 3.13.18, passed dependency consistency and all nine offline tests, and observed HTTP 200/405/404 on the CI container. The three source tests used invented ZIP files, not real CSV data. Actual log and run/job/HTTP metadata are in `ci-passed.log` and `ci-verification.json`. This is not completion of the real row audit, model training, or final evaluation. The acquisition record's fetcher hash still identifies its original implementation; documentation-only evidence updates do not alter it.

@@ -50,7 +50,7 @@ The verified invocation, written for your Git Bash terminal in the repository ro
 
 The Python invocation and arguments ran through the host tools; a learner Git Bash run is not claimed. The first actual run reported `downloaded`. The second reported `verified_cached` with the same archive fingerprint. The source record preserves the original retrieval time.
 
-Three invented-archive regression tests check cache reuse without another download, failure on modified raw bytes without rewriting the record, and rejection of an unexpected archive layout before snapshot creation. All nine current tests passed locally. CI uses small invented fixtures and does not fetch or analyze the real dataset.
+Three invented-archive regression tests check cache reuse without another download, failure on modified raw bytes without rewriting the record, and rejection of an unexpected archive layout before snapshot creation. All nine current tests passed locally and in [Linux CI](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/44925455815). CI uses small invented fixtures and does not fetch or analyze the real dataset. Its actual log and metadata are saved with the source evidence.
 
 ## Why the source audit still matters
 
