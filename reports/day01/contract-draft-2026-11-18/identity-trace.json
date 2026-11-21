@@ -1,0 +1,25 @@
+{
+  "evidence_scope": "Invented teaching values; not model evaluation results.",
+  "input_order": [
+    "hour-09",
+    "hour-10"
+  ],
+  "label_order": [
+    "hour-10",
+    "hour-09"
+  ],
+  "matches": [
+    {
+      "record_id": "hour-10",
+      "prediction": 90,
+      "actual_count": 95,
+      "absolute_error": 5
+    },
+    {
+      "record_id": "hour-09",
+      "prediction": 120,
+      "actual_count": 150,
+      "absolute_error": 30
+    }
+  ]
+}

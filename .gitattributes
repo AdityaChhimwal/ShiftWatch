@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# Archived evidence hashes describe exact original bytes.
+reports/** -text

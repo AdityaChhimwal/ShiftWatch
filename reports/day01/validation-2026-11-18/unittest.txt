@@ -1,0 +1,9 @@
+test_count_rejects_silent_coercion_and_negative_values (test_contracts.LabelRecordTests.test_count_rejects_silent_coercion_and_negative_values) ... ok
+test_id_requires_nonempty_bounded_text_without_whitespace (test_contracts.LabelRecordTests.test_id_requires_nonempty_bounded_text_without_whitespace) ... ok
+test_missing_fields_and_unexpected_data_are_not_silently_ignored (test_contracts.LabelRecordTests.test_missing_fields_and_unexpected_data_are_not_silently_ignored) ... ok
+test_valid_fields_are_preserved_including_zero (test_contracts.LabelRecordTests.test_valid_fields_are_preserved_including_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.010s
+
+OK

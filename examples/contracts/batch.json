@@ -1,0 +1,15 @@
+{
+  "batch_id": "teaching-batch-001",
+  "records": [
+    {
+      "record_id": "hour-09",
+      "event_time": "2012-01-01T09:00:00",
+      "features": {"temp": 0.4, "hum": 0.6}
+    },
+    {
+      "record_id": "hour-10",
+      "event_time": "2012-01-01T10:00:00",
+      "features": {"temp": 0.45, "hum": 0.65}
+    }
+  ]
+}
