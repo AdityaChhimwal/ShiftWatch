@@ -54,6 +54,6 @@ This connects the full path: a visitor contacts the public address, Render forwa
 
 When your laptop is switched off, which computer would handle a friend's request to this public health URL? Explain using where Uvicorn is now running.
 
-This check is unassessed and is the immediate next task. Correct Docker answers are already recorded separately; they are not being repeated as new prerequisites.
+At the close-out the learner answered "I don't know." Re-taught that the running Python application is on Render's computer and the phone is a client receiving its result. In a guided retest, the learner answered "It recieves it from Render's computer." Correct for this narrow check after the worked explanation; independent troubleshooting is not established. The reading was reported completed and the tester gap recorded. Day 1's core pass criteria are now closed in `docs/day01-closeout.md`. Stop here; Day 2 waits for the learner's later request.
 
 Sources checked on 21 November 2026: [web services and port binding](https://render.com/docs/web-services), [Blueprint fields](https://render.com/docs/blueprint-spec), [health checks](https://render.com/docs/health-checks), and [free-service limitations](https://render.com/docs/free).

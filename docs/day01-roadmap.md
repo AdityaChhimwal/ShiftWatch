@@ -2,7 +2,7 @@
 
 18 November 2026 · Teaching structure proposed by the assistant from the existing Day 1 scope
 
-The detailed plan prescribes deliverables/pass criteria, not a lesson count. Group those into six numbered lessons, following the separate unnumbered problem introduction. Teach while implementing within the six-hour learner budget; this grouping adds no project features. These are lesson slots, not automatic completions or six more full days.
+The detailed plan prescribes deliverables/pass criteria, not a lesson count. Group those into six numbered lessons, following the separate unnumbered problem introduction. Teach while implementing within the six-hour learner budget; this grouping adds no project features. These are lesson slots, not automatic completions or six more full days. Day 1's core pass criteria closed on 21 November; the exact stopping point and open follow-ups are in [the close-out](day01-closeout.md).
 
 | Lesson | Main idea and working piece | Actual stage |
 |---|---|---|
@@ -11,7 +11,7 @@ The detailed plan prescribes deliverables/pass criteria, not a lesson count. Gro
 | 3 | Executable input rules and useful failures | Draft label schema/trace and four assistant-authored tests pass. ID reasoning retest passed; validation understanding unassessed. |
 | 4 | Whole system flow and three truthful statuses | Connected architecture/report design saved; the distribution-versus-error comprehension check passed on 21 November. |
 | 5 | Git history, dependency reproduction, and initial Docker packaging | Narrow Git and Docker build/run/port checks passed after correction/retest. Clean Linux Docker CI passed dependency consistency, six tests, and HTTP checks. Local engine remains unavailable. |
-| 6 | Hosted health check, access constraints, and Day 1 acceptance review | Account review and approved Free Docker launch completed. Public health 200/JSON, method 405, and missing route 404 verified and saved. Final host-location learner check and remaining Day 1 review gaps are pending. |
+| 6 | Hosted health check, access constraints, and Day 1 acceptance review | Public health verified; guided host/client retest correct after reteaching. Reading reported complete; no tester confirmed, gap recorded. Day 1 core acceptance closed; stop here. |
 
 DMLS reading supports these lessons inside the same daily budget. Tester availability, unresolved Day 2 data assumptions, and the day's evidence/checkpoint review are part of the final Day 1 review. They are not extra numbered lessons. No contact will be sent on the learner's behalf without explicit instruction.
 
