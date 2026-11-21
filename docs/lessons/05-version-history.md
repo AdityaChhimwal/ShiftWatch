@@ -61,6 +61,32 @@ Keeping source history is one part of reproduction. Another computer also needs 
 
 You edit a file, run `git add`, and successfully run `git commit`. You have not pushed. Does GitHub already contain that new commit? Which command sends it there?
 
-The answer has not yet been assessed. Lesson 5 as a whole remains partial while runtime reproduction and container verification are pending.
+Learner answer on 21 November: "It stays in the staging area and only visible in github when we use git push".
+
+Assessment: the push-to-GitHub part is correct. The staging/local-history distinction needs correction and a retest; this does not yet pass the whole check.
+
+### Follow the same change through three moments
+
+Think of staging as preparing a photograph, committing as saving that photograph in your computer's album, and pushing as copying the saved photograph to the online album.
+
+| Last successful command | What happened to our selected change? | Does GitHub have the new commit yet? |
+|---|---|---|
+| `git add` | Its contents are selected for the next commit; that new commit does not exist yet. | No |
+| `git commit` | A new commit now records those contents in local Git history. | No |
+| `git push` | The local commit has also been sent to GitHub. | Yes |
+
+This traces one change with no additional edits. Committing does not remove the working files. Once committed, there is no outstanding staged difference for that change; a later edit can be staged for another commit.
+
+We checked the actual repository before this correction was added. `git diff --cached --name-only` printed no filenames, while `git log -1 --oneline` printed:
+
+```text
+cb0c5bc docs: teach Git history and record the first publication
+```
+
+So that commit was already in local history even though no uncommitted staged changes were waiting. It had also been pushed in the previous lesson; this observation is not a new demonstration of an unpushed commit.
+
+Retest: after successfully running `git add` and `git commit`, where is the new saved version recorded: the staging area or local Git history?
+
+The retest has not yet been answered. Lesson 5 as a whole remains partial while this distinction, runtime reproduction, and container verification are pending.
 
 The official [Git commit documentation](https://git-scm.com/docs/git-commit) and [Git push documentation](https://git-scm.com/docs/git-push) provide the full command behavior. This lesson uses their basic workflow on our actual project.

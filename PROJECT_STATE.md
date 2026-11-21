@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-21 (Asia/Calcutta).
 Current milestone: Day 1 — define the problem and remove access risk.
-Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-observed-error checks passed. Lesson 5A's Git walkthrough is current; the existing foundation has been committed and pushed. Local health/schema foundations exist; runtime reproduction, hosted service, and other Day 1 gates remain pending. Calendar Day 4 has arrived while the Day 1 milestone is unfinished; the 29 November target is at risk, and the 1 December outer deadline has not been moved.
+Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-observed-error checks passed. Lesson 5A's push-to-GitHub answer is correct, but staging versus local history needs a retest after correction. The existing foundation has been committed and pushed. Local health/schema foundations exist; runtime reproduction, hosted service, and other Day 1 gates remain pending. Calendar Day 4 has arrived while the Day 1 milestone is unfinished; the 29 November target is at risk, and the 1 December outer deadline has not been moved.
 
 ## Verified facts and evidence
 
@@ -37,6 +37,7 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 - Four existing schema tests and pip dependency consistency passed again on 21 November before initial publication. Docker's desktop-linux engine remained unavailable; a bounded Docker Desktop start attempt timed out after 45 seconds. Lesson 5 will record actual packaging/reproduction results separately.
 - Committed the reviewed existing foundation as `b801aa11f25f7e611ae22d0282b9e1bcb01863e7` (`feat: add health service, label validation, and guided project baseline`) and successfully pushed `main` to the existing GitHub origin on 21 November. The first push established upstream tracking. Reviewed 66 staged files; the targeted credential-pattern scan reported no matches. This is not a claim of an exhaustive security audit.
 - Saved `docs/lessons/05-version-history.md` as Lesson 5A: connected explanation and actual commit/push trace. Keep Docker/reproduction as Lesson 5B within the existing Lesson 5 scope to avoid introducing several unfamiliar tools in one lesson. Git comprehension remains unassessed; application code is unchanged in this teaching revision. Read-only local/remote verification output is saved under `reports/day01/git-2026-11-21/`.
+- Lesson 5A learner response: "It stays in the staging area and only visible in github when we use git push". The GitHub/push part is correct; after a successful commit, the version is recorded in local history, rather than remaining merely a staged change. Added a three-moment worked example and narrow retest to the lesson. Actual read-only check before this correction: `git diff --cached --name-only` printed no filenames; `git log -1 --oneline` showed `cb0c5bc`. No application code changed; the staging-versus-local-history retest remains unanswered.
 
 ## Decisions and existing constraints
 
@@ -62,14 +63,14 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 - Render account access/eligibility, available quota, effective resources, payment/spend settings, and deployment authorization are unverified. Public docs do not establish these account facts.
 - Day 11 tester availability and invitation have not been established. No external validation exists.
 - Dataset archive/schema/terms audit and exact boundaries remain Day 2 work. No source counts, feature allowlist, split boundaries, or results have been invented.
-- This is the learner's first actual project. Missing-label performance distinction, corrected ID matching, and distribution-versus-observed-error distinction are passed. Other status meanings, validation reasoning, Git reasoning, and Python/SQL/statistics implementation proficiency remain unassessed. PSI calculation, event recall/delay, duplicate-label join, and independent core-test repair are unattempted and require teaching/guided practice.
+- This is the learner's first actual project. Missing-label performance distinction, corrected ID matching, and distribution-versus-observed-error distinction are passed. GitHub/push reasoning is correct; staging versus local history needs a retest after correction. Other status meanings, validation reasoning, and Python/SQL/statistics implementation proficiency remain unassessed. PSI calculation, event recall/delay, duplicate-label join, and independent core-test repair are unattempted and require teaching/guided practice.
 - Tool sandbox restricted temporary installation files, network package resolution, and loopback connections. Using a project-local temp directory and approved execution for installs/local HTTP checks resolved this session's setup obstacles. See SESSION.md. These are execution-environment observations, not learner-terminal defects.
 - The previously missing `ShiftWatch-Project-Chat-Prompt.md` was created on 2026-11-13 from the confirmed working agreement and user clarifications. Its dated Day 1 snapshot is not evidence of progress beyond the state recorded here.
 
 ## Review against Day 1 pass criteria
 
 - File/tool discovery: checked; limitations recorded.
-- Problem-design learning: missing-label, narrow identity, and distribution-versus-error checks passed; other explanations unassessed. Lessons 1–4, Lesson 5A, and the six-lesson roadmap are saved; Lesson 5A's check is current.
+- Problem-design learning: missing-label, narrow identity, and distribution-versus-error checks passed. Lessons 1–4, Lesson 5A, and the six-lesson roadmap are saved; Lesson 5A is partly correct, with its staging-versus-local-history retest current. Other explanations remain unassessed.
 - Environment and Git setup: project-local Python/pip and web dependencies verified; baseline committed and pushed to the existing origin. Clean reproduction and Docker verification remain pending.
 - Draft contracts/problem statement/architecture: assistant-proposed draft saved; learner review pending. Reordered-ID teaching example executed and checked, not a production join implementation.
 - Hosted health response: not done.
@@ -80,4 +81,4 @@ Status: **partial**. Missing-label, narrow ID-matching, and distribution-versus-
 
 ## Next task
 
-Answer Lesson 5A's taught check: after a local commit but before a push, does GitHub contain that commit, and which command sends it there?
+Answer Lesson 5A's narrow retest: after successful `git add` and `git commit`, is the new saved version recorded in the staging area or local Git history?
