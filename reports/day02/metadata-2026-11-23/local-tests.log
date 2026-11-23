@@ -1,0 +1,19 @@
+test_bad_key_stops_audit_and_nonfinite_weather_is_reported (test_audit_bike_metadata.MetadataAuditTests.test_bad_key_stops_audit_and_nonfinite_weather_is_reported) ... ok
+test_blank_cell_and_absent_hour_are_separate_without_imputation (test_audit_bike_metadata.MetadataAuditTests.test_blank_cell_and_absent_hour_are_separate_without_imputation) ... ok
+test_daily_grain_is_rejected (test_audit_bike_metadata.MetadataAuditTests.test_daily_grain_is_rejected) ... ok
+test_duplicates_remain_counted_and_out_of_order_is_visible (test_audit_bike_metadata.MetadataAuditTests.test_duplicates_remain_counted_and_out_of_order_is_visible) ... ok
+test_outcome_cells_are_never_accessed (test_audit_bike_metadata.MetadataAuditTests.test_outcome_cells_are_never_accessed) ... ok
+test_count_rejects_silent_coercion_and_negative_values (test_contracts.LabelRecordTests.test_count_rejects_silent_coercion_and_negative_values) ... ok
+test_id_requires_nonempty_bounded_text_without_whitespace (test_contracts.LabelRecordTests.test_id_requires_nonempty_bounded_text_without_whitespace) ... ok
+test_missing_fields_and_unexpected_data_are_not_silently_ignored (test_contracts.LabelRecordTests.test_missing_fields_and_unexpected_data_are_not_silently_ignored) ... ok
+test_valid_fields_are_preserved_including_zero (test_contracts.LabelRecordTests.test_valid_fields_are_preserved_including_zero) ... ok
+test_changed_raw_file_fails_without_replacing_the_recorded_evidence (test_fetch_bike_source.SourceSnapshotTests.test_changed_raw_file_fails_without_replacing_the_recorded_evidence) ... ok
+test_repeated_fetch_verifies_cache_without_downloading_or_changing_record (test_fetch_bike_source.SourceSnapshotTests.test_repeated_fetch_verifies_cache_without_downloading_or_changing_record) ... ok
+test_wrong_archive_layout_fails_before_a_snapshot_is_written (test_fetch_bike_source.SourceSnapshotTests.test_wrong_archive_layout_fails_before_a_snapshot_is_written) ... ok
+test_real_http_error_is_reported_without_startup_retry (test_smoke_health.SmokeHealthTests.test_real_http_error_is_reported_without_startup_retry) ... ok
+test_transient_startup_errors_are_retried_then_responses_are_checked (test_smoke_health.SmokeHealthTests.test_transient_startup_errors_are_retried_then_responses_are_checked) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.232s
+
+OK

@@ -62,6 +62,6 @@ This is the reason for auditing: a familiar column name and a reputable source d
 
 If we mixed `hour.csv` and `day.csv` rows into one training table merely because both contain `cnt`, what would become inconsistent about the meaning of one prediction?
 
-This check is unassessed. The acquisition implementation is verified separately from learner understanding; the full Day 2 audit and role freeze are not complete.
+The learner answered "Don't know" on 23 November. Re-explained: an hourly target counts rentals in one hour, while a daily target counts them across a day; combining them changes the question represented by a model output. This remains guided reinforcement, not a passed check. Lesson 2 continues with concrete hourly records. The acquisition implementation is verified separately from learner understanding; the full Day 2 audit and role freeze are not complete.
 
 Sources: [UCI dataset page](https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset), the exact bundled README recorded by hash, and [CC BY 4.0 conditions](https://creativecommons.org/licenses/by/4.0/).

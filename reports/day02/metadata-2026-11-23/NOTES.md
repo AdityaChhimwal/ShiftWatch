@@ -1,0 +1,13 @@
+# Target-blind source metadata audit — 23 November 2026
+
+`audit.json` is the actual output of `scripts/audit_bike_metadata.py` for the original cached hourly CSV. `command-output.json` is the captured command stdout. `local-tests.log` is the captured local unittest stdout/stderr from Python 3.13.3. Tests use invented fixtures, not real rental outcomes.
+
+The report measures 17,379 rows, 731 distinct dates, zero blank cells in the 14 metadata fields, zero excess source IDs/date-hour keys, chronological source order, and 165 absent combinations on an inclusive 731 × 24 nominal source-calendar grid. Full-row uniqueness follows from unique nonblank source IDs without examining targets. The four weather fields have no nonblank invalid/nonfinite numeric values; full range/semantic validation is not claimed. Category counts remain raw codes, not fitted monitoring bins or selected thresholds.
+
+The 17,379 measurement agrees with the bundled README and differs from the UCI page's 17,389 claim recorded on 21 November. It resolves the count for this exact snapshot only. Conflicting season/temperature descriptions remain unresolved. No source timezone/DST policy or cause of absent rows has been established. Absent combinations do not establish zero rentals or lost physical hours; no imputation was performed.
+
+All raw file fingerprints matched the previously published source record. CSV parsing separates fields, but only metadata cells are accessed by the audit. The report contains no `cnt`, `casual`, or `registered` values, target summaries, final detector results, fitted preprocessing, trained model, or policy thresholds. Future final-period metadata inspection is allowed by the plan; outcomes remain unexamined. No serving/deployment behavior changed.
+
+Before this work, `scripts/fetch_bike_source.py` already contained an unstaged whitespace-only edit. It was left untouched and excluded from this lesson's commit. Its published original bytes still match the acquisition script fingerprint in the earlier source record; the local edit changes no behavior. New evidence pins the audit script itself and the published source record.
+
+Fourteen local tests passed. Linux CI is pending the functional commit and will be archived separately before claiming its outcome. Learner response to Lesson 1's grain check was "Don't know"; the mentor re-explained it and used this audit as further guided practice. Neither that check nor Lesson 2's check is marked passed. The milestone remains partial: feature/schema freeze, exact chronological roles, reproducible preparation, further verification, and learner review are still required.
