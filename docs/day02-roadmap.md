@@ -7,7 +7,7 @@ The day's question is: **what exactly are our observations, and how can we use t
 | Lesson | Concept and working result | Planned focused minutes | Actual stage |
 |---|---|---:|---|
 | 1 | Source provenance, original bytes, and what one observation means | 35 | Acquisition verified locally/in Linux CI. Learner answered "Don't know" to the grain check; re-taught with hourly versus daily examples. Guided reinforcement remains open. |
-| 2 | Data quality: measure counts, missingness, duplicates, calendar gaps, and categories | 65 | Target-blind audit implemented on 23 November: 17,379 rows, zero blank metadata cells, 165 absent nominal hours, zero duplicate IDs/hour keys. Fourteen local tests passed; Linux CI and learner check tracked separately. |
+| 2 | Data quality: measure counts, missingness, duplicates, calendar gaps, and categories | 65 | Target-blind audit implemented on 23 November: 17,379 rows, zero blank metadata cells, 165 absent nominal hours, zero duplicate IDs/hour keys. Fourteen local/Linux CI tests and container HTTP checks passed; learner check pending. |
 | 3 | Leakage and feature availability: decide what may enter a prediction | 45 | Not started; no frozen feature allowlist yet. |
 | 4 | Five chronological roles: why one train/test split is insufficient here | 70 | Not started; exact whole-date boundaries not assigned. |
 | 5 | Turn audited assumptions into a data contract and reproducible preparation command | 50 | Not started; final schema/preparation artifacts pending. |

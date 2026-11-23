@@ -63,7 +63,7 @@ The command below uses Git Bash syntax from the repository root:
 
 The Python invocation and arguments were executed through PowerShell; a learner Git Bash run is not claimed. `--report` names the JSON evidence file. The default input paths are the cached raw folder and the published source record from Lesson 1. The command prints a short summary while the JSON retains per-column counts, gap locations, category counts, assumptions, and hashes.
 
-Five new tests use invented fixtures: daily-grain rejection, blank-cell versus missing-hour separation, duplicate/order visibility, protected-outcome access, and invalid-key/nonfinite-weather behavior. The outcome-access test wraps each invented row in a guard that raises immediately if an outcome index is accessed. All 14 project tests passed locally; the Linux CI outcome is recorded separately in the report notes when available. CI never downloads or analyzes the real source rows.
+Five new tests use invented fixtures: daily-grain rejection, blank-cell versus missing-hour separation, duplicate/order visibility, protected-outcome access, and invalid-key/nonfinite-weather behavior. The outcome-access test wraps each invented row in a guard that raises immediately if an outcome index is accessed. All 14 project tests passed locally and in [Linux CI](https://github.com/AdityaChhimwal/ShiftWatch/actions/runs/45201977061); the image build and container HTTP checks also passed. The actual log and run metadata are archived with separate CI hashes in the report directory. CI never downloads or analyzes the real source rows.
 
 ## One taught check
 
