@@ -1,0 +1,8 @@
+{
+  "source": "Render dashboard, Application Metrics",
+  "observation_at_utc": "2026-11-24T13:51:03.372Z",
+  "window": "Last 12 hours",
+  "limit_mb": 512,
+  "observed_peak_mb": null,
+  "status": "No usage samples displayed in the memory chart after the benchmark"
+}

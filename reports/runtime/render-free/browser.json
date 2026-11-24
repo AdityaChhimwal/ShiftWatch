@@ -1,0 +1,30 @@
+{
+  "public_quality_replay": {
+    "steps": 26,
+    "batches": 24,
+    "incident": {
+      "channel": "quality",
+      "first_batch": 9,
+      "last_batch": 16
+    },
+    "rows": 3830
+  },
+  "batch_9_accepted": 143,
+  "batch_9_submitted": 168,
+  "performance_unknown_before_labels": true,
+  "custom_upload": {
+    "predictions": 2,
+    "labels_attached": 2,
+    "actuals": [
+      [
+        "example-01",
+        281
+      ],
+      [
+        "example-02",
+        192
+      ]
+    ]
+  },
+  "verified_at_utc": "2026-11-24T13:42:34.494Z"
+}

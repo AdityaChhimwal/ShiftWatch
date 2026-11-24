@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-11-24T13:58:34.495720+00:00",
+  "idle_wait_since_last_browser_verification_seconds": 960.002031,
+  "robot_probe_http_status": 200,
+  "render_sleep_marker_observed": true,
+  "sleep_probe_response": "User-agent: *\nDisallow: /\n",
+  "probe": "GET /robots.txt",
+  "wake_request": "GET /health",
+  "wake_started_at_utc": "2026-11-24T13:58:34.955551+00:00",
+  "ready_ms": 22384.831800009124,
+  "attempts": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 22384.831800009124
+    }
+  ],
+  "result": "ready"
+}

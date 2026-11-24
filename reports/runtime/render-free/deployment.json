@@ -1,0 +1,15 @@
+{
+  "service": "shiftwatch",
+  "service_id": "srv-dc0qd961egvs738o8ts0",
+  "deployment_id": "dep-dc2p5oks728c73b8jtvg",
+  "deployment_url": "https://dashboard.render.com/web/srv-dc0qd961egvs738o8ts0/deploys/dep-dc2p5oks728c73b8jtvg",
+  "public_url": "https://shiftwatch-iejl.onrender.com/",
+  "commit": "47dbd03e0b471337931fc1d512313d2309417059",
+  "status": "live",
+  "trigger": "manual, specific commit",
+  "plan": "Free",
+  "region": "Singapore",
+  "started_local": "2026-11-24T19:06:34+05:30",
+  "render_reported_deploy_duration_seconds": 58.8,
+  "observed_memory_limit_mb": 512
+}

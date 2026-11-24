@@ -1,0 +1,33 @@
+{
+  "started_at_utc": "2026-11-24T13:37:35.224208+00:00",
+  "health": {
+    "base_url": "https://shiftwatch-iejl.onrender.com",
+    "checks": [
+      {
+        "method": "GET",
+        "path": "/health",
+        "status": 200,
+        "body": {
+          "status": "ok"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/health",
+        "status": 405
+      },
+      {
+        "method": "GET",
+        "path": "/__smoke_missing__",
+        "status": 404
+      }
+    ]
+  },
+  "api": {
+    "dashboard": "passed",
+    "custom_lifecycle": "passed",
+    "session_isolation": "passed",
+    "limits": "passed",
+    "replay_steps_and_flush": 26
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "host": "Render Free, Singapore",
+  "requests": 30,
+  "rows": 500,
+  "concurrency": 1,
+  "p50_ms": 571.2067999993451,
+  "p95_ms": 976.5376900089905,
+  "url": "https://shiftwatch-iejl.onrender.com",
+  "started_at_utc": "2026-11-24T13:37:55.738739+00:00",
+  "completed_at_utc": "2026-11-24T13:38:14.934322+00:00",
+  "data": "Synthetic observations",
+  "reported_latency": "Public HTTPS client round trip"
+}

@@ -2,6 +2,8 @@
 
 ShiftWatch monitors batches for an hourly bike-rental regression model. The dashboard shows row validation, distribution tests, and observed prediction error. Run a controlled incident replay or upload a CSV and attach the outcomes later.
 
+[Open the live dashboard](https://shiftwatch-iejl.onrender.com/) · [Hosted verification and timings](reports/runtime/render-free/)
+
 ## Run locally
 
 Use Python 3.13. In Git Bash on Windows, from the repository root:
