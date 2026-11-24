@@ -1,0 +1,11 @@
+{
+  "mode": "clean committed tree and pinned original source cache",
+  "result": "passed",
+  "identical": [
+    "configs/splits.json",
+    "src/shiftwatch/artifacts/manifest.json",
+    "reports/development/model_metrics.json",
+    "reports/development/summary.json",
+    "reports/source-audit.json"
+  ]
+}

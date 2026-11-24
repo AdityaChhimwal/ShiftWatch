@@ -3,6 +3,9 @@
   "requests": 30,
   "rows": 500,
   "concurrency": 1,
-  "p50_ms": 71.45655000931583,
-  "p95_ms": 87.55375999608077
+  "p50_ms": 112.39685001783073,
+  "p95_ms": 161.98378000990488,
+  "process_start_to_first_health_ms": 8167.436600022484,
+  "peak_process_working_set_bytes": 152432640,
+  "revision": "47dbd03e0b471337931fc1d512313d2309417059"
 }

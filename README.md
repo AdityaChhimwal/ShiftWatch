@@ -33,7 +33,11 @@ The model estimates rentals for an observed hour using its measured weather. The
 
 Validation MAE was **32.95** rentals per hour for the candidate and **94.61** for the median baseline over 1,748 rows. Neither tested persistence rule satisfied the policy selection gate. The dashboard uses P0 as a comparator. Its distribution alerts were frequent even on stable simulated inputs. [Validation metrics](reports/development/model_metrics.json) · [Development comparisons](reports/development/summary.json)
 
+On the locked final period, candidate MAE was **95.99** against baseline **188.63** over 3,488 hours. P0 raised distribution alerts on **479 of 480** eligible no-injection final batches. [Model card, experiment results, and evidence](reports/RESULTS.md)
+
 ## Reproduce development
+
+Use a separate checkout to preserve the published artifacts. The source hash check pins the original UCI archive contents.
 
 ```bash
 export PYTHONPATH=src
@@ -50,3 +54,5 @@ From Git Bash with Windows Python, set `PYTHONPATH='src;scripts'` for unit tests
 PYTHONPATH='src;scripts' ./.venv/Scripts/python.exe -m unittest discover -s tests -v
 ./.venv/Scripts/python.exe scripts/smoke_app.py --url http://127.0.0.1:8000
 ```
+
+The [final evaluation record](reports/freeze.json) pins the source revision, dependency and artifact hashes, and seed lists. To reproduce the final results, use a separate checkout at that exact revision, acquire the pinned source, copy `reports/freeze.json` into that checkout, and run `scripts/evaluate.py final` with the environment above. The command reserves a fresh output directory so an existing final run remains intact.
