@@ -1,0 +1,8 @@
+{
+  "host": "local-windows",
+  "requests": 30,
+  "rows": 500,
+  "concurrency": 1,
+  "p50_ms": 71.45655000931583,
+  "p95_ms": 87.55375999608077
+}

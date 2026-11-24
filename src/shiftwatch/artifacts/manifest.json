@@ -1,0 +1,21 @@
+{
+  "features": [
+    "hr",
+    "weekday",
+    "workingday",
+    "mnth",
+    "temp",
+    "hum",
+    "windspeed",
+    "weathersit"
+  ],
+  "scikit_learn": "1.9.1",
+  "source_sha256": "e03de4ee4ef4dc376ac6e04bf829673c6269e8eba5c60fa121640fa2f829504f",
+  "splits_sha256": "dce831a827464e30c6b09ed7837f21dc72a01bceebef739e412aa36ddbc74a35",
+  "files": {
+    "model.joblib": "0d5c4b703fb1f077451bac4e30fa0a07d755ddad7be2ee9e975ee4ed7331a59c",
+    "reference.json": "8ce21f20315cc33a0e44e7af0f64afa53079a14ac790a33c4e37c315288118dc",
+    "demo.json.gz": "c5996fc2cc25c943d2b31f693d27081468c83e5aebb50dd361e93d9430c8f963",
+    "policy.json": "a973968c61b097764622fc51b1b799cd2270a341cc80a4ca723a9b8ee1fc2249"
+  }
+}

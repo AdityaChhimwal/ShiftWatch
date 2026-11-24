@@ -57,6 +57,7 @@ jobs:
         run: |
           docker run --detach --name shiftwatch-ci --publish 127.0.0.1:8000:8000 shiftwatch:ci
           python3 scripts/smoke_health.py --url http://127.0.0.1:8000
+          python3 scripts/smoke_app.py --url http://127.0.0.1:8000
 
       - name: Show server logs and remove the container
         if: always()

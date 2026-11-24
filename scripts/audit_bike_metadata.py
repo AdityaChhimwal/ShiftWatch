@@ -139,7 +139,7 @@ def audit_source(raw_dir: Path, source_record: Path, report_path: Path) -> dict:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--raw-dir", type=Path, default=Path("data/raw/bike-sharing"))
-    parser.add_argument("--source-record", type=Path, default=Path("reports/day02/source-2026-11-21/source.json"))
+    parser.add_argument("--source-record", type=Path, default=Path("reports/source.json"))
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
     result = audit_source(args.raw_dir, args.source_record, args.report)

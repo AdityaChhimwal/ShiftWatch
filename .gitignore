@@ -11,3 +11,16 @@ data/
 *.sqlite
 *.sqlite3
 *.db
+/AGENTS.md
+/PROJECT_STATE.md
+/ShiftWatch-14-Day-Plan.md
+/ShiftWatch-Project-Chat-Prompt.md
+/docs/day*.md
+/docs/batch-label-contract.md
+/docs/lessons/
+/examples/contracts/
+/examples/reports/
+/reports/day01/
+/reports/day02/
+/reports/plan-revision-2026-11-13/
+/learning/

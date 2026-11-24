@@ -1,0 +1,255 @@
+{
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119
+  ],
+  "controlled_runs": 120,
+  "calibration_batches": 480,
+  "selected": {
+    "name": "P0",
+    "effect": null,
+    "performance_mae": 115.31702868807534
+  },
+  "comparisons": {
+    "P0": {
+      "events": 40,
+      "eligible": 40,
+      "detected": 40,
+      "missed": 0,
+      "recall": 1.0,
+      "median_delay": 0.0,
+      "null_rate": 0.9916666666666667,
+      "null_by_channel": {
+        "quality": {
+          "eligible": 480,
+          "alerted": 0,
+          "rate": 0.0,
+          "seed_rate_min": 0.0,
+          "seed_rate_max": 0.0
+        },
+        "distribution": {
+          "eligible": 480,
+          "alerted": 476,
+          "rate": 0.9916666666666667,
+          "seed_rate_min": 0.9583333333333334,
+          "seed_rate_max": 1.0
+        },
+        "performance": {
+          "eligible": 480,
+          "alerted": 24,
+          "rate": 0.05,
+          "seed_rate_min": 0.0,
+          "seed_rate_max": 0.16666666666666666
+        }
+      },
+      "events_by_scenario": {
+        "covariate-low": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "covariate-high": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "quality": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "target-low": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 2.0
+        },
+        "target-high": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 2.0
+        }
+      }
+    },
+    "P1-0.1": {
+      "events": 40,
+      "eligible": 40,
+      "detected": 40,
+      "missed": 0,
+      "recall": 1.0,
+      "median_delay": 0.0,
+      "null_rate": 0.9,
+      "null_by_channel": {
+        "quality": {
+          "eligible": 480,
+          "alerted": 0,
+          "rate": 0.0,
+          "seed_rate_min": 0.0,
+          "seed_rate_max": 0.0
+        },
+        "distribution": {
+          "eligible": 480,
+          "alerted": 432,
+          "rate": 0.9,
+          "seed_rate_min": 0.5,
+          "seed_rate_max": 0.9583333333333334
+        },
+        "performance": {
+          "eligible": 480,
+          "alerted": 24,
+          "rate": 0.05,
+          "seed_rate_min": 0.0,
+          "seed_rate_max": 0.16666666666666666
+        }
+      },
+      "events_by_scenario": {
+        "covariate-low": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "covariate-high": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "quality": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "target-low": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 2.0
+        },
+        "target-high": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 2.0
+        }
+      }
+    },
+    "P1-0.2": {
+      "events": 40,
+      "eligible": 40,
+      "detected": 40,
+      "missed": 0,
+      "recall": 1.0,
+      "median_delay": 0.0,
+      "null_rate": 0.4791666666666667,
+      "null_by_channel": {
+        "quality": {
+          "eligible": 480,
+          "alerted": 0,
+          "rate": 0.0,
+          "seed_rate_min": 0.0,
+          "seed_rate_max": 0.0
+        },
+        "distribution": {
+          "eligible": 480,
+          "alerted": 230,
+          "rate": 0.4791666666666667,
+          "seed_rate_min": 0.125,
+          "seed_rate_max": 0.6666666666666666
+        },
+        "performance": {
+          "eligible": 480,
+          "alerted": 24,
+          "rate": 0.05,
+          "seed_rate_min": 0.0,
+          "seed_rate_max": 0.16666666666666666
+        }
+      },
+      "events_by_scenario": {
+        "covariate-low": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "covariate-high": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "quality": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 0.0
+        },
+        "target-low": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 2.0
+        },
+        "target-high": {
+          "events": 20,
+          "eligible": 20,
+          "detected": 20,
+          "missed": 0,
+          "recall": 1.0,
+          "median_delay": 2.0
+        }
+      }
+    }
+  }
+}

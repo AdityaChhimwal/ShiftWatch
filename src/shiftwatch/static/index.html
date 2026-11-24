@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore batch model monitoring using hourly bike rentals.">
+  <title>ShiftWatch · Model monitoring</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">Shift<span>Watch</span></a>
+    <a class="docs" href="https://github.com/AdityaChhimwal/ShiftWatch">GitHub ↗</a>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="kicker">BATCH MODEL MONITORING</p>
+      <h1>Model monitoring</h1>
+      <p>Replay hourly bike rental estimates and see how input quality, distribution change, and prediction error evolve as evidence arrives.</p>
+    </section>
+    <section class="controls">
+      <div>
+        <h2>Start a session</h2>
+        <p>Demo labels arrive two batches later. Sessions expire after two hours and may disappear when the host restarts.</p>
+      </div>
+      <form id="start">
+        <label for="mode">Session source</label>
+        <div class="actions">
+          <select id="mode"><option value="custom">Upload my own CSV</option></select>
+          <button type="submit">Start session</button>
+        </div>
+      </form>
+    </section>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <section id="dashboard" hidden>
+      <div class="toolbar">
+        <div><h2 id="session-title">Session</h2><p id="progress"></p></div>
+        <div class="actions">
+          <button id="next" type="button">Next step</button>
+          <button id="run" type="button" class="secondary">Run remaining steps</button>
+          <button id="export-json" type="button" class="secondary">Export JSON</button>
+          <button id="export-csv" type="button" class="secondary">Export CSV</button>
+        </div>
+      </div>
+      <div id="custom" class="uploads" hidden>
+        <form id="batch-form" class="panel">
+          <h3>Prediction batch</h3>
+          <a href="/assets/example-batch.csv" download>Download CSV template</a>
+          <label for="batch-id">Batch ID</label><input id="batch-id" required maxlength="64" value="batch-1">
+          <label for="batch-file">Batch CSV</label><input id="batch-file" type="file" accept=".csv,text/csv" required>
+          <button>Submit batch</button>
+        </form>
+        <form id="label-form" class="panel">
+          <h3>Observed labels</h3>
+          <a href="/assets/example-labels.csv" download>Download label template</a>
+          <label for="label-file">Label CSV</label><input id="label-file" type="file" accept=".csv,text/csv" required>
+          <button>Attach labels</button>
+        </form>
+      </div>
+      <p id="incident" class="incident" hidden></p>
+      <div class="signals">
+        <article class="panel"><h3>Data quality</h3><p id="quality" class="signal"></p><p id="quality-detail"></p></article>
+        <article class="panel"><h3>Distribution change</h3><p id="distribution" class="signal"></p><p id="distribution-detail"></p><p>Distribution tests can alert on stable inputs. Use the effect sizes and sample counts to investigate.</p></article>
+        <article class="panel"><h3>Observed performance</h3><p id="performance" class="signal"></p><p id="performance-detail"></p></article>
+      </div>
+      <section class="panel history">
+        <h2>Batch timeline</h2>
+        <p>Choose a batch to inspect its signals. Performance updates as labels arrive.</p>
+        <div class="scroll"><table>
+          <thead><tr><th scope="col">Batch</th><th scope="col">Quality</th><th scope="col">Distribution</th><th scope="col">Label coverage</th><th scope="col">MAE</th></tr></thead>
+          <tbody id="timeline"></tbody>
+        </table></div>
+        <details id="diagnostics"><summary>Batch details</summary><pre id="details"></pre></details>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,7 +1,0 @@
-{
-  "report": "reports/day02/metadata-2026-11-23/audit.json",
-  "row_count": 17379,
-  "blank_metadata_cells": 0,
-  "absent_nominal_hour_slots": 165,
-  "outcomes_examined": false
-}
